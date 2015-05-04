@@ -1,0 +1,160 @@
+//
+// Created by Nick on 15/5/3.
+// Copyright (c) 2015 WeHack Studio. All rights reserved.
+//
+
+#import "SettingsViewController.h"
+#import "PCLConstants.h"
+#import "MobClick.h"
+
+@interface SettingsViewController ()
+
+@property(weak, nonatomic) IBOutlet UITableViewCell *tellFriendsCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *rateCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *supportCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *versionCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *snapCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *snapProCell;
+
+@end
+
+@implementation SettingsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.title = NSLocalizedString(@"Settings", @"Settings");
+
+    self.tellFriendsCell.textLabel.text = NSLocalizedString(@"Tell friends", @"Tell friends");
+    self.rateCell.textLabel.text = NSLocalizedString(@"Rate in AppStore", @"Rate in AppStore");
+    self.supportCell.textLabel.text = NSLocalizedString(@"Email to support", @"Email to support");
+    self.twitterCell.textLabel.text = NSLocalizedString(@"Follow us on Twitter", @"Follow us on Twitter");
+
+    self.snapCell.detailTextLabel.text = NSLocalizedString(@"Free", @"Free");
+    self.snapProCell.detailTextLabel.text = NSLocalizedString(@"$0.99", @"$0.99");
+
+    self.versionCell.textLabel.text = NSLocalizedString(@"Current verison", @"Current verison");
+    self.versionCell.detailTextLabel.text = CLIENT_VERSION;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setToolbarHidden:YES animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setToolbarHidden:NO animated:NO];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [self tellFriends];
+        }
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            [self goRating];
+        } else if (indexPath.row == 1) {
+            [self sendMail];
+        } else if (indexPath.row == 2) {
+            [self goTwitter];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            [self goSnap];
+        } else if (indexPath.row == 1) {
+            [self goSnapPro];
+        }
+    }
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+
+- (void)tellFriends {
+    [MobClick event:@"tellFriends"];
+    NSString *URLString = @"https://itunes.apple.com/us/app/shan-yin-zui-hao-yong-ke-da/id991595690?mt=8";
+    NSString *textToShare = [NSString stringWithFormat:NSLocalizedString(@"Check out 'Flash' app! The best printable check list. It's free from %@", @"Check out 'Flash' app! The best printable check list. It's free from %@"), URLString];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare]
+                                                  applicationActivities:nil];
+    [self.navigationController presentViewController:activityViewController
+                                            animated:YES
+                                          completion:^{
+
+                                          }];
+}
+
+- (void)sendMail {
+    [MobClick event:@"sendMail"];
+
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        picker.navigationBar.tintColor = [UIColor whiteColor];
+        picker.mailComposeDelegate = self;
+        [picker setSubject:NSLocalizedString(@"Feedback for Flash", @"Feedback for Flash")];
+        [picker setToRecipients:@[@"oxtiger@gmail.com"]];
+        [self presentViewController:picker animated:YES completion:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please set up an account for sending mail on your device", @"Please set up an account for sending mail on your device")
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:NSLocalizedString(@"Confirm", @"Confirm"), nil];
+        [alert show];
+    }
+}
+
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    // Notifies users about errors associated with the interface
+    NSString *message = nil;
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            break;
+        case MFMailComposeResultSaved:
+            message = NSLocalizedString(@"draft has been saved", @"draft has been saved");
+            break;
+        case MFMailComposeResultSent:
+            message = NSLocalizedString(@"mail has been scheduled to be sent", @"mail has been scheduled to be sent");
+            break;
+        case MFMailComposeResultFailed:
+            message = NSLocalizedString(@"failed to send", @"failed to send");
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    if (message) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确认", nil];
+        [alert show];
+    }
+}
+
+- (void)goSnap {
+    [MobClick event:@"goSnap"];
+    [self openURL:@"https://itunes.apple.com/cn/app/dou-tu-kan-tu-shen-qi-for/id849104717?mt=8"];
+}
+
+- (void)goSnapPro {
+    [MobClick event:@"goSnapPro"];
+    [self openURL:@"https://itunes.apple.com/cn/app/dou-tupro-kan-tu-shen-qi-for/id967317148?mt=8"];
+}
+
+- (void)goTwitter {
+    [MobClick event:@"goTwitter"];
+    [self openURL:@"https://twitter.com/suchuanyi"];
+}
+
+- (void)goRating {
+    [MobClick event:@"goRating"];
+    [self openURL:@"https://itunes.apple.com/us/app/shan-yin-zui-hao-yong-ke-da/id991595690?mt=8"];
+}
+
+- (void)openURL:(NSString *)url {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+@end

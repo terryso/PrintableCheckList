@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "2pz-XF-uhl"; */
+"2pz-XF-uhl.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "6dM-IA-B4O"; */
+"6dM-IA-B4O.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "7hH-tI-dth"; */
+"7hH-tI-dth.title" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "Eoh-X3-7hV"; */
+"Eoh-X3-7hV.text" = "Subtitle";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "FcK-6a-flF"; */
+"FcK-6a-flF.title" = "返回";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "GZl-RK-g9H"; */
+"GZl-RK-g9H.title" = "返回";
+
+/* Class = "UINavigationItem"; title = "New Project"; ObjectID = "gJe-pf-yqr"; */
+"gJe-pf-yqr.title" = "New Project";
+
+/* Class = "UIViewController"; title = "Preview"; ObjectID = "iID-gM-vEk"; */
+"iID-gM-vEk.title" = "Preview";
+
+/* Class = "UITableViewController"; title = "Lists"; ObjectID = "pGg-6v-bdr"; */
+"pGg-6v-bdr.title" = "清单";
+
+/* Class = "UITableViewController"; title = "Items"; ObjectID = "q11-fw-LVK"; */
+"q11-fw-LVK.title" = "Items";
+
+/* Class = "UINavigationController"; title = "Lists"; ObjectID = "rS3-R9-Ivy"; */
+"rS3-R9-Ivy.title" = "清单";
+
+/* Class = "UIViewController"; title = "Text Edit"; ObjectID = "sFw-Eu-m5P"; */
+"sFw-Eu-m5P.title" = "Text Edit";
+
+/* Class = "UINavigationItem"; title = "Lists"; ObjectID = "tQt-TN-PWz"; */
+"tQt-TN-PWz.title" = "清单";

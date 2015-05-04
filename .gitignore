@@ -1,0 +1,10 @@
+xcuserdata
+.DS_Store
+.log
+.idea
+.xcworkspace
+pods
+xcuserdata
+build
+LatestBuild
+Packages

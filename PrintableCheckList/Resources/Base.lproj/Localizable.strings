@@ -1,0 +1,28 @@
+/****************************************************************************/
+/* Localization file */
+
+
+"Cancel" = "Cancel";
+"Print" = "Print";
+"Preview" = "Preview";
+"New List" = "New List";
+"Edit List" = "Edit List";
+"New Item" = "New Item";
+"Edit Item" = "Edit Item";
+"Tell friends" = "Tell friends";
+"Rate in AppStore" = "Rate in AppStore";
+"Email to support" = "Email to support";
+"Current verison" = "Current verison";
+"Settings" = "Settings";
+"Feedback for Flash" = "Feedback for Flash";
+"Please set up an account for sending mail on your device" = "Please set up an account for sending mail on your device";
+"Confirm" = "Confirm";
+"draft has been saved" = "draft has been saved";
+"mail has been scheduled to be sent" = "mail has been scheduled to be sent";
+"failed to send" = "failed to send";
+"Check out 'Flash' app! The best printable check list. It's free from %@" = "Check out 'Flash' app! The best printable check list. It's free from %@";
+"Follow us on Twitter" = "Follow us on Twitter";
+"Free" = "Free";
+"$0.99" = "$0.99";
+"defaultProject" = "YnBsaXN0MDDUAQIDBAUGdndYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QKQcIERITIicoKTA0NTY6OzxAQUJGR0hMTU5SU1RYWVpeX2BkZWZqa2xxVSRudWxs1AkKCwwNDg8QXnNlbGYucHJvamVjdElkWnNlbGYudGl0bGVac2VsZi5pdGVtc1YkY2xhc3OAAoADgASAKF8QETE0MzA2NzE4OTEuNTM3NjAxXxAQVHJhdmVsIENoZWNrbGlzdNIUDBUhWk5TLm9iamVjdHOrFhcYGRobHB0eHyCABYAJgAyAD4ASgBWAGIAbgB6AIYAkgCfTIwwKJCUmW3NlbGYuaXRlbUlkgAaACIAHXxARMTQzMDY3MTk3NC40NTM3OTNYUGFzc3BvcnTSKissLVokY2xhc3NuYW1lWCRjbGFzc2VzVEl0ZW2iLi9USXRlbVhOU09iamVjdNMjDAoxJTOACoAIgAtfEBAxNDMwNjcxOTkyLjE0NDQ0XxAkRHJpdmVycyBsaWNlbnNlIG9yIG90aGVyIG9mZmljaWFsIElE0yMMCjclOYANgAiADl8QETE0MzA2NzIwMDguMzYxNTkzXxATVmlzYSAoaWYgbmVjZXNzYXJ5KdMjDAo9JT+AEIAIgBFfEBAxNDMwNjcyMDYwLjc4NjU1XxA5UGFzc3BvcnQgc2NhbiAoZG9uJ3QgZm9yZ2V0IHRvIGVtYWlsIHRvIHlvdXJzZWxmIGlmIGxvc3Qp0yMMCkMlRYATgAiAFF8QETE0MzA2NzIwODUuMjY0NTU4XxA2QWRkcmVzcyBib29rIGFuZCBlbWVyZ2VuY3kgbnVtYmVycyBhbmQgY29udGFjdCBkZXRhaWxz0yMMCkklS4AWgAiAF18QETE0MzA2NzIxMDguMTUyMjEzXxAlVHJhdmVsIHRpY2tldHMgKGFpcnBsYW5lLCB0cmFpbiwgYnVzKdMjDApPJVGAGYAIgBpfEBExNDMwNjcyMTIxLjAwOTU5M1pEaXJlY3Rpb25z0yMMClUlV4AcgAiAHV8QETE0MzA2NzIxMzIuMjg1NDUyXxAVSG90ZWwgY29udGFjdCBkZXRhaWxz0yMMClslXYAfgAiAIF8QETE0MzA2NzIxNDMuOTAzNDQ1XxASTWFwIGFuZCBndWlkZSBib29r0yMMCmElY4AigAiAI18QETE0MzA2NzIxNzEuNzIwNTc5XxAoQ2FzaCBpbiBmb3JlaWduIGN1cnJlbmN5IChpZiBhcHBsaWNhYmxlKdMjDApnJWmAJYAIgCZfEBExNDMwNjcyMTk0LjM0NjI2NF8QKUdldCBhIENyZWRpdCBjYXJkLCBkZWJpdCBjYXJkIG9yIEFUTSBjYXJk0iorbW5XTlNBcnJheaJvcFdOU0FycmF5WE5TT2JqZWN00iorcnNXUHJvamVjdKJ0dVdQcm9qZWN0WE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0Xh5VHJvb3SAAQAIABEAGgAjAC0AMgA3AGMAaQByAIEAjACXAJ4AoACiAKQApgC6AM0A0gDdAOkA6wDtAO8A8QDzAPUA9wD5APsA/QD/AQEBCAEUARYBGAEaAS4BNwE8AUcBUAFVAVgBXQFmAW0BbwFxAXMBhgGtAbQBtgG4AboBzgHkAesB7QHvAfECBAJAAkcCSQJLAk0CYQKaAqECowKlAqcCuwLjAuoC7ALuAvADBAMPAxYDGAMaAxwDMANIA08DUQNTA1UDaQN+A4UDhwOJA4sDnwPKA9ED0wPVA9cD6wQXBBwEJAQnBC8EOAQ9BEUESARQBFkEawRuBHMAAAAAAAACAQAAAAAAAAB6AAAAAAAAAAAAAAAAAAAEdQ==";
+"One item per line" = "One item per line";

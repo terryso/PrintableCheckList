@@ -6,6 +6,7 @@
 #import "SettingsViewController.h"
 #import "PCLConstants.h"
 #import "MobClick.h"
+#import "UIKitHelper.h"
 
 @interface SettingsViewController ()
 
@@ -80,11 +81,19 @@
     NSString *textToShare = [NSString stringWithFormat:NSLocalizedString(@"Check out 'Flash' app! The best printable check list. It's free from %@", @"Check out 'Flash' app! The best printable check list. It's free from %@"), URLString];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare]
                                                   applicationActivities:nil];
-    [self.navigationController presentViewController:activityViewController
-                                            animated:YES
-                                          completion:^{
-
-                                          }];
+    //if iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityViewController animated:YES completion:nil];
+    }
+    //if iPad
+    else {
+        // Change Rect to position Popover
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)
+                               inView:self.view
+             permittedArrowDirections:UIPopoverArrowDirectionAny
+                             animated:YES];
+    }
 }
 
 - (void)sendMail {
@@ -135,12 +144,12 @@
 
 - (void)goSnap {
     [MobClick event:@"goSnap"];
-    [self openURL:@"https://itunes.apple.com/cn/app/dou-tu-kan-tu-shen-qi-for/id849104717?mt=8"];
+    [self openURL:@"https://itunes.apple.com/app/apple-store/id849104717?pt=74623800&ct=flash&mt=8"];
 }
 
 - (void)goSnapPro {
     [MobClick event:@"goSnapPro"];
-    [self openURL:@"https://itunes.apple.com/cn/app/dou-tupro-kan-tu-shen-qi-for/id967317148?mt=8"];
+    [self openURL:@"https://itunes.apple.com/app/apple-store/id967317148?pt=74623800&ct=flash&mt=8"];
 }
 
 - (void)goTwitter {

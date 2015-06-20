@@ -46,7 +46,7 @@ static NSString *password = @"com.wehack.pwd";
 }
 
 - (void)configAppearance {
-    [[UINavigationBar appearance] setTranslucent:NO];
+    //[[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
@@ -137,8 +137,8 @@ static NSString *password = @"com.wehack.pwd";
 
 - (NSString *)channelID {
     //return @"develop";
-    return @"fir";
-    //return @"appstore";
+    //return @"fir";
+    return @"appstore";
 }
 
 - (void)addDefaultProject {

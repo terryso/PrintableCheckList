@@ -32,6 +32,8 @@
     if (self.placeholder.length > 0) {
         self.textView.placeholder = self.placeholder;
     }
+
+    self.navigationItem.rightBarButtonItem.enabled = self.textView.text.length > 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +58,10 @@
 
 - (IBAction)closeTextView:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem.enabled = textView.text.length > 0;
 }
 
 @end

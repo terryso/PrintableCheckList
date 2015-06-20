@@ -23,6 +23,7 @@
 		33976619810C1F17026687BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F4542B57BAFDC3CB85A /* AppDelegate.m */; };
 		3397691E626C29E8EC1C5356 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 339764C4F8D0003CA0EE013D /* add.png */; };
 		33976A0A23420684CFC156DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976CB0F86C6AEF5273AD57 /* LaunchScreen.xib */; };
+		33976A32929D5CBCC526B6B2 /* UIKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976BAD0B8A439068ECD74F /* UIKitHelper.m */; };
 		33976AEBD00FABC54D4E9F8C /* PrintManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976D0C7662BC78CB7DF12B /* PrintManager.m */; };
 		33976CB242E7B2D36A26BE8E /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 339769AAD43B2B30D635D498 /* Project.m */; };
 		33976D5123A573B49C158B93 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397698B91419C7F47C17BC4 /* SZTextView.m */; };
@@ -76,8 +77,10 @@
 		3397698B91419C7F47C17BC4 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
 		3397698D63873D9A6FDEAA9D /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
 		339769AAD43B2B30D635D498 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		339769C5FFA4472AAD0A237F /* UIKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitHelper.h; sourceTree = "<group>"; };
 		33976AF4A0258B4928485A53 /* PrintManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintManager.h; sourceTree = "<group>"; };
 		33976B624556EC8FB9446D7A /* ProjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectManager.h; sourceTree = "<group>"; };
+		33976BAD0B8A439068ECD74F /* UIKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitHelper.m; sourceTree = "<group>"; };
 		33976BBE7DF506D024873E6C /* PrintableCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintableCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33976CB216F8C688BCCF184D /* ProjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectManager.m; sourceTree = "<group>"; };
 		33976CE84F5F11FA8D921EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -205,8 +208,17 @@
 				3397621D8A2E54B249647C8D /* PCLConstants.h */,
 				339760014D478AF96A41B4A6 /* SDK */,
 				33976FBFCF33CBD04BA3FF25 /* Vendors */,
+				3397671C1315B0ACC993D987 /* Library */,
 			);
 			path = PrintableCheckList;
+			sourceTree = "<group>";
+		};
+		3397671C1315B0ACC993D987 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				339769B3FCA47B9A202F9B9B /* Interface */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		339767B95D3F42F904298CCA /* UMeng */ = {
@@ -217,6 +229,15 @@
 				33976703DB398502C49BB8DD /* libMobClickLibrary.a */,
 			);
 			path = UMeng;
+			sourceTree = "<group>";
+		};
+		339769B3FCA47B9A202F9B9B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				33976BAD0B8A439068ECD74F /* UIKitHelper.m */,
+				339769C5FFA4472AAD0A237F /* UIKitHelper.h */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		33976C1C8005A79D22A44BAD /* SZTextView */ = {
@@ -447,6 +468,7 @@
 				33976AEBD00FABC54D4E9F8C /* PrintManager.m in Sources */,
 				33976341EA89B36F1C88D04B /* SettingsViewController.m in Sources */,
 				33976D5123A573B49C158B93 /* SZTextView.m in Sources */,
+				33976A32929D5CBCC526B6B2 /* UIKitHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +543,13 @@
 				);
 				INFOPLIST_FILE = PrintableCheckList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ad0f5d75-aa44-41b5-99d7-c5a73ee132f7";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -632,10 +657,13 @@
 				);
 				INFOPLIST_FILE = PrintableCheckList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ad0f5d75-aa44-41b5-99d7-c5a73ee132f7";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};

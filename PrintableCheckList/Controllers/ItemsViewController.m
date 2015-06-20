@@ -156,7 +156,19 @@
             }
         };
 
-        [printController presentAnimated:YES completionHandler:completionHandler];
+        //if iPhone
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            [printController presentAnimated:YES completionHandler:completionHandler];
+        }
+        //if iPad
+        else {
+            // Change Rect to position Popover
+            [printController presentFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)
+                                      inView:self.view
+                                    animated:YES
+                           completionHandler:completionHandler];
+        }
+
     } else if (buttonIndex == 1) {
         [MobClick event:@"preview"];
 

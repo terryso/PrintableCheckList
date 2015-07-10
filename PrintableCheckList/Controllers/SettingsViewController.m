@@ -7,16 +7,18 @@
 #import "PCLConstants.h"
 #import "MobClick.h"
 #import "UIKitHelper.h"
+#import "AppDelegate.h"
 
 @interface SettingsViewController ()
 
 @property(weak, nonatomic) IBOutlet UITableViewCell *tellFriendsCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *rateCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *supportCell;
-@property(weak, nonatomic) IBOutlet UITableViewCell *versionCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *snapCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *snapProCell;
+//@property(weak, nonatomic) IBOutlet UITableViewCell *versionCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *snapCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *snapProCell;
+@property(nonatomic, strong) UILabel *versionLabel;
 
 @end
 
@@ -35,8 +37,10 @@
     self.snapCell.detailTextLabel.text = NSLocalizedString(@"Free", @"Free");
     self.snapProCell.detailTextLabel.text = NSLocalizedString(@"$0.99", @"$0.99");
 
-    self.versionCell.textLabel.text = NSLocalizedString(@"Current verison", @"Current verison");
-    self.versionCell.detailTextLabel.text = CLIENT_VERSION;
+    //self.versionCell.textLabel.text = NSLocalizedString(@"Current verison", @"Current verison");
+    //self.versionCell.detailTextLabel.text = CLIENT_VERSION;
+    
+    self.tableView.tableFooterView = self.versionLabel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -72,8 +76,6 @@
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
 
 - (void)tellFriends {
     [MobClick event:@"tellFriends"];
@@ -164,6 +166,22 @@
 
 - (void)openURL:(NSString *)url {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+- (UILabel *)versionLabel {
+    if (!_versionLabel) {
+        _versionLabel = [[UILabel alloc] init];
+        _versionLabel.font = [UIFont systemFontOfSize:13.0f];
+        _versionLabel.textColor = [UIColor colorWithRed:195/255.0f green:195/255.0f blue:195/255.0f alpha:1];
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+        NSString *versionText = [NSString stringWithFormat:@"%@-%@(%@)", version, build, [AppDelegate shareDelegate].channelID];
+        _versionLabel.text = versionText;
+        
+        CGSize versionSize = PCL_TEXTSIZE(_versionLabel.text, _versionLabel.font);
+        _versionLabel.frame = CGRectMake((self.view.frame.size.width - versionSize.width) / 2, 0, versionSize.width, versionSize.height);
+    }
+    return _versionLabel;
 }
 
 @end

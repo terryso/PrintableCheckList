@@ -14,5 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (AppDelegate *)shareDelegate;
+- (NSString *)channelID;
 
 @end

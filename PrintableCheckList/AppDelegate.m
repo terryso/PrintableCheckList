@@ -78,6 +78,10 @@ static NSString *password = @"com.wehack.pwd";
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
++ (AppDelegate *)shareDelegate {
+    return (AppDelegate *) [UIApplication sharedApplication].delegate;
+}
+
 - (void)initAVOSCloud {
     [AVOSCloud setApplicationId:@"95gv8i8q706avdocuprgqsriuz2yusowsfwhqz2zwn25cq6c"
                       clientKey:@"e5xffakufclbm49rbp0d7tpd15sqg2tawmjwq13q396i7839"];

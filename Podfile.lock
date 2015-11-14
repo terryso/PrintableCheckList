@@ -1,13 +1,13 @@
 PODS:
-  - AVOSCloud (3.1.2.4)
+  - AVOSCloud (3.1.2.9)
   - SSKeychain (1.2.3)
 
 DEPENDENCIES:
-  - AVOSCloud (~> 3.1.0)
+  - AVOSCloud (~> 3.1.2.6)
   - SSKeychain (~> 1.2.3)
 
 SPEC CHECKSUMS:
-  AVOSCloud: 83a2b0753eb784b2f6e5245241a841575dfb3cc6
+  AVOSCloud: 7d2406a4954c15c98363ce841b257b81cdba0bc9
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

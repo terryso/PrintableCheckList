@@ -56,7 +56,7 @@
 
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Project *project = self.projects[indexPath.row];
-        [[segue destinationViewController] setProject:project];
+        [(ItemsViewController *) [segue destinationViewController] setProject:project];
     } else if ([[segue identifier] isEqualToString:@"settingsView"]) {
         [MobClick event:@"settings"];
     }

@@ -60,7 +60,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (void)syncUserProjects {
++ (void)backupUserProjects {
     NSTimeInterval lastSyncTime = [[NSUserDefaults standardUserDefaults] doubleForKey:keyLastSyncProjects];
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     PCL_LOG(@"now: %@, lastSyncTime: %@, result: %@", @(now), @(lastSyncTime), @(now - lastSyncTime));

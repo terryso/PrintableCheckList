@@ -94,7 +94,7 @@ static NSString *password = @"com.wehack.pwd";
                                     block:^(AVUser *user, NSError *error) {
                                         if (user != nil) {
                                             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-                                            [ProjectManager syncUserProjects];
+                                            [ProjectManager backupUserProjects];
                                         } else {
                                             PCL_LOG(@"用户登陆失败: %@", error);
                                             [self signUp];
@@ -118,7 +118,7 @@ static NSString *password = @"com.wehack.pwd";
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-            [ProjectManager syncUserProjects];
+            [ProjectManager backupUserProjects];
         } else {
             PCL_LOG(@"注册用户失败: %@", error);
         }

@@ -15,7 +15,7 @@ target 'PrintableCheckList' do
 #pod 'KDCycleBannerView', '~> 1.1.1'
 #pod 'UMengAnalytics-NO-IDFA', '~> 3.4.7'
 #pod 'SZTextView', '~> 1.2.1'
-pod 'AVOSCloud', '~> 3.1.0'
+pod 'AVOSCloud', '~> 3.1.2.6'
 pod 'SSKeychain', '~> 1.2.3'
 #pod 'BlocksKit', '~> 2.2.5'
 #pod 'Overline-BlocksKit', '~> 0.4.0'

@@ -16,6 +16,6 @@
 + (void)deleteProject:(Project *)project;
 + (void)saveAllProjects:(NSArray *)projects;
 
-+ (void)syncUserProjects;
++ (void)backupUserProjects;
 
 @end

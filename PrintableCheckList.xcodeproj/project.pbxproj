@@ -338,6 +338,7 @@
 				33976ACE708CEE3F869B0FAA /* Resources */,
 				CA4B7E8D1D204AEDC925E2D8 /* Copy Pods Resources */,
 				016E287D1AF668F80081C3C9 /* ShellScript */,
+				E34550AA5FBC9AF2F87DD317 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,6 +448,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34550AA5FBC9AF2F87DD317 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

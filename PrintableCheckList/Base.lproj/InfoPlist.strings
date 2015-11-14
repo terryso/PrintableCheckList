@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  PrintableCheckList
+
+  Created by Nick on 15/5/3.
+  Copyright (c) 2015年 WeHack Studio. All rights reserved.
+*/
+
+CFBundleDisplayName = "Flash"; 

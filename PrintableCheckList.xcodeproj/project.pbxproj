@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		013119261AF5FDD7000F976C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 013119281AF5FDD7000F976C /* InfoPlist.strings */; };
+		0131192D1AF60345000F976C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0131192F1AF60345000F976C /* Localizable.strings */; };
+		016E287F1AF6691C0081C3C9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016E287E1AF6691C0081C3C9 /* Crashlytics.framework */; };
+		016E28811AF769EE0081C3C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 016E28801AF769EE0081C3C9 /* libz.dylib */; };
+		14C89B62DD4B939E30EA464B /* libPods-PrintableCheckList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F31F1BCC07762174627C88F6 /* libPods-PrintableCheckList.a */; };
+		33976186836C9B3A3749FBEC /* TextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976DDC0920B8ED4AA8C588 /* TextEditViewController.m */; };
+		3397619DEA4BBE71BA87B134 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339763F6DFABA885B372ED55 /* Images.xcassets */; };
+		339761A1DEAD109F63129D30 /* ProjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976CB216F8C688BCCF184D /* ProjectManager.m */; };
+		3397623B39487E7627D698B7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397631112CAA3B3AD24511A /* HomeViewController.m */; };
+		33976341EA89B36F1C88D04B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976E228BB6B0C7FDE71FD5 /* SettingsViewController.m */; };
+		3397642B83814888E8A60EA8 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33976703DB398502C49BB8DD /* libMobClickLibrary.a */; };
+		3397648AAB1FB8FBB50006C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397685AAEEF1529D45C584B /* main.m */; };
+		33976590A3B7044C5BA4F14B /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339764C9089C6C6C31566980 /* PreviewViewController.m */; };
+		33976619810C1F17026687BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976F4542B57BAFDC3CB85A /* AppDelegate.m */; };
+		3397691E626C29E8EC1C5356 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 339764C4F8D0003CA0EE013D /* add.png */; };
+		33976A0A23420684CFC156DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33976CB0F86C6AEF5273AD57 /* LaunchScreen.xib */; };
+		33976A32929D5CBCC526B6B2 /* UIKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976BAD0B8A439068ECD74F /* UIKitHelper.m */; };
+		33976AEBD00FABC54D4E9F8C /* PrintManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 33976D0C7662BC78CB7DF12B /* PrintManager.m */; };
+		33976CB242E7B2D36A26BE8E /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 339769AAD43B2B30D635D498 /* Project.m */; };
+		33976D5123A573B49C158B93 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3397698B91419C7F47C17BC4 /* SZTextView.m */; };
+		33976DD2D9842F46973C152D /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 339765908F78B1B6D3CF2B6C /* ItemsViewController.m */; };
+		33976E1633C6D866CBAA0B91 /* PrintableCheckListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 339763053D49E8BC3FD5C905 /* PrintableCheckListTests.m */; };
+		33976E25D533F024EAF0F303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33976E03505AE13E8FCE29CD /* Main.storyboard */; };
+		33976E6C521AE56CFC889076 /* button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 339763C923D86B84A702C06C /* button.gif */; };
+		33976F06956A7EE2039F8E22 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 339766D8C9C95BF811C679CE /* Item.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		339768FE1C995FAC75758857 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 339761830B77EE38314FA95D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33976ED2162EB75367C50322;
+			remoteInfo = PrintableCheckList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		013119291AF5FDFE000F976C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0131192A1AF5FDFE000F976C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		0131192B1AF5FDFE000F976C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0131192C1AF5FE1F000F976C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0131192E1AF60345000F976C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		013119301AF6034B000F976C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		016E287E1AF6691C0081C3C9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		016E28801AF769EE0081C3C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		339760A3AF66A3A0524211C5 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		3397620771A7B18EBD248F83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3397621D8A2E54B249647C8D /* PCLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLConstants.h; sourceTree = "<group>"; };
+		339763053D49E8BC3FD5C905 /* PrintableCheckListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrintableCheckListTests.m; sourceTree = "<group>"; };
+		3397631112CAA3B3AD24511A /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		339763C923D86B84A702C06C /* button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = button.gif; sourceTree = "<group>"; };
+		339763F6DFABA885B372ED55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		339764C4F8D0003CA0EE013D /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		339764C9089C6C6C31566980 /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewViewController.m; sourceTree = "<group>"; };
+		339765908F78B1B6D3CF2B6C /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		339765C5F30DD1320BD9C19C /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		339765FD13439EBC0C13A72E /* PrintableCheckListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrintableCheckListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		339766D8C9C95BF811C679CE /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		33976703DB398502C49BB8DD /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		3397673C144D4B8226420ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		339767B211EE4BE9EB9A5AB0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		339767EA71B960458A5B2E97 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
+		33976850CB5E99CDA09276B2 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		3397685AAEEF1529D45C584B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3397694E844ED310AEFB6C4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		33976968148E00FA6F68EF9D /* TextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditViewController.h; sourceTree = "<group>"; };
+		3397698B91419C7F47C17BC4 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
+		3397698D63873D9A6FDEAA9D /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
+		339769AAD43B2B30D635D498 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		339769C5FFA4472AAD0A237F /* UIKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitHelper.h; sourceTree = "<group>"; };
+		33976AF4A0258B4928485A53 /* PrintManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrintManager.h; sourceTree = "<group>"; };
+		33976B624556EC8FB9446D7A /* ProjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectManager.h; sourceTree = "<group>"; };
+		33976BAD0B8A439068ECD74F /* UIKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitHelper.m; sourceTree = "<group>"; };
+		33976BBE7DF506D024873E6C /* PrintableCheckList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintableCheckList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33976CB216F8C688BCCF184D /* ProjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectManager.m; sourceTree = "<group>"; };
+		33976CE84F5F11FA8D921EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		33976CEA24E648937CE65D28 /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewViewController.h; sourceTree = "<group>"; };
+		33976D0C7662BC78CB7DF12B /* PrintManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintManager.m; sourceTree = "<group>"; };
+		33976D4CC04E9E49B78F431D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33976DDC0920B8ED4AA8C588 /* TextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditViewController.m; sourceTree = "<group>"; };
+		33976E228BB6B0C7FDE71FD5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		33976EB0C470BF9B850AA24E /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		33976ED822E6685AC937B619 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		33976F4542B57BAFDC3CB85A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAB49A08B7DC9C4FE2815426 /* Pods-PrintableCheckList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrintableCheckList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList.debug.xcconfig"; sourceTree = "<group>"; };
+		F31F1BCC07762174627C88F6 /* libPods-PrintableCheckList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PrintableCheckList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA82CFEC11445277F9BB6824 /* Pods-PrintableCheckList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrintableCheckList.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3397632F71092629037CF767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		339768E260EDB77A83257D21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				016E28811AF769EE0081C3C9 /* libz.dylib in Frameworks */,
+				016E287F1AF6691C0081C3C9 /* Crashlytics.framework in Frameworks */,
+				3397642B83814888E8A60EA8 /* libMobClickLibrary.a in Frameworks */,
+				14C89B62DD4B939E30EA464B /* libPods-PrintableCheckList.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		339760014D478AF96A41B4A6 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				339767B95D3F42F904298CCA /* UMeng */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		33976078732906A41BD5984F = {
+			isa = PBXGroup;
+			children = (
+				3397611166996E254C1945DE /* Products */,
+				3397663575FD80F6E69A4436 /* PrintableCheckList */,
+				3397652A59D88BA29AEAFF08 /* PrintableCheckListTests */,
+				771299A2BFE87DF60D910527 /* Pods */,
+				74779FB8225613F060AE1AA2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3397611166996E254C1945DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33976BBE7DF506D024873E6C /* PrintableCheckList.app */,
+				339765FD13439EBC0C13A72E /* PrintableCheckListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		339762BF5E00564150958D33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				339769AAD43B2B30D635D498 /* Project.m */,
+				339765C5F30DD1320BD9C19C /* Project.h */,
+				339766D8C9C95BF811C679CE /* Item.m */,
+				33976850CB5E99CDA09276B2 /* Item.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33976380EB4D5ECA771AAED6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3397694E844ED310AEFB6C4D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3397652A59D88BA29AEAFF08 /* PrintableCheckListTests */ = {
+			isa = PBXGroup;
+			children = (
+				33976380EB4D5ECA771AAED6 /* Supporting Files */,
+				339763053D49E8BC3FD5C905 /* PrintableCheckListTests.m */,
+			);
+			path = PrintableCheckListTests;
+			sourceTree = "<group>";
+		};
+		33976592DE1DD38201FC3C6A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3397631112CAA3B3AD24511A /* HomeViewController.m */,
+				339767B211EE4BE9EB9A5AB0 /* HomeViewController.h */,
+				33976968148E00FA6F68EF9D /* TextEditViewController.h */,
+				33976DDC0920B8ED4AA8C588 /* TextEditViewController.m */,
+				339765908F78B1B6D3CF2B6C /* ItemsViewController.m */,
+				33976EB0C470BF9B850AA24E /* ItemsViewController.h */,
+				339764C9089C6C6C31566980 /* PreviewViewController.m */,
+				33976CEA24E648937CE65D28 /* PreviewViewController.h */,
+				33976E228BB6B0C7FDE71FD5 /* SettingsViewController.m */,
+				33976ED822E6685AC937B619 /* SettingsViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3397663575FD80F6E69A4436 /* PrintableCheckList */ = {
+			isa = PBXGroup;
+			children = (
+				33976DDE5BBF5A491EF498B8 /* Supporting Files */,
+				339763F6DFABA885B372ED55 /* Images.xcassets */,
+				33976CB0F86C6AEF5273AD57 /* LaunchScreen.xib */,
+				3397620771A7B18EBD248F83 /* AppDelegate.h */,
+				33976F4542B57BAFDC3CB85A /* AppDelegate.m */,
+				33976E03505AE13E8FCE29CD /* Main.storyboard */,
+				33976D033B6699E5D2D6429F /* Resources */,
+				339762BF5E00564150958D33 /* Models */,
+				33976ECA3E9DDC6BD6E65258 /* Managers */,
+				33976592DE1DD38201FC3C6A /* Controllers */,
+				3397621D8A2E54B249647C8D /* PCLConstants.h */,
+				339760014D478AF96A41B4A6 /* SDK */,
+				33976FBFCF33CBD04BA3FF25 /* Vendors */,
+				3397671C1315B0ACC993D987 /* Library */,
+			);
+			path = PrintableCheckList;
+			sourceTree = "<group>";
+		};
+		3397671C1315B0ACC993D987 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				339769B3FCA47B9A202F9B9B /* Interface */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		339767B95D3F42F904298CCA /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				339760A3AF66A3A0524211C5 /* MobClick.h */,
+				339767EA71B960458A5B2E97 /* MobClickSocialAnalytics.h */,
+				33976703DB398502C49BB8DD /* libMobClickLibrary.a */,
+			);
+			path = UMeng;
+			sourceTree = "<group>";
+		};
+		339769B3FCA47B9A202F9B9B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				33976BAD0B8A439068ECD74F /* UIKitHelper.m */,
+				339769C5FFA4472AAD0A237F /* UIKitHelper.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		33976C1C8005A79D22A44BAD /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3397698D63873D9A6FDEAA9D /* SZTextView.h */,
+				3397698B91419C7F47C17BC4 /* SZTextView.m */,
+			);
+			path = SZTextView;
+			sourceTree = "<group>";
+		};
+		33976D033B6699E5D2D6429F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				339763C923D86B84A702C06C /* button.gif */,
+				339764C4F8D0003CA0EE013D /* add.png */,
+				0131192F1AF60345000F976C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		33976DDE5BBF5A491EF498B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33976CE84F5F11FA8D921EDE /* Info.plist */,
+				3397685AAEEF1529D45C584B /* main.m */,
+				013119281AF5FDD7000F976C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33976ECA3E9DDC6BD6E65258 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				33976CB216F8C688BCCF184D /* ProjectManager.m */,
+				33976B624556EC8FB9446D7A /* ProjectManager.h */,
+				33976D0C7662BC78CB7DF12B /* PrintManager.m */,
+				33976AF4A0258B4928485A53 /* PrintManager.h */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		33976FBFCF33CBD04BA3FF25 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				33976C1C8005A79D22A44BAD /* SZTextView */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		74779FB8225613F060AE1AA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				016E28801AF769EE0081C3C9 /* libz.dylib */,
+				016E287E1AF6691C0081C3C9 /* Crashlytics.framework */,
+				F31F1BCC07762174627C88F6 /* libPods-PrintableCheckList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		771299A2BFE87DF60D910527 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAB49A08B7DC9C4FE2815426 /* Pods-PrintableCheckList.debug.xcconfig */,
+				FA82CFEC11445277F9BB6824 /* Pods-PrintableCheckList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33976089F3F2EB8E63A3F1A1 /* PrintableCheckListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33976A92723EAC594E8688E5 /* Build configuration list for PBXNativeTarget "PrintableCheckListTests" */;
+			buildPhases = (
+				33976E0DBE5C62525FFE0B5A /* Sources */,
+				3397632F71092629037CF767 /* Frameworks */,
+				339763A42454A1BA9514FECC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33976B6F8A0F319CB08C7FD9 /* PBXTargetDependency */,
+			);
+			name = PrintableCheckListTests;
+			productName = PrintableCheckListTests;
+			productReference = 339765FD13439EBC0C13A72E /* PrintableCheckListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		33976ED2162EB75367C50322 /* PrintableCheckList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 339767A9E140D0E3088DC8F4 /* Build configuration list for PBXNativeTarget "PrintableCheckList" */;
+			buildPhases = (
+				381C5BA60819C22AB7626170 /* Check Pods Manifest.lock */,
+				339764A3300043ED84716209 /* Sources */,
+				339768E260EDB77A83257D21 /* Frameworks */,
+				33976ACE708CEE3F869B0FAA /* Resources */,
+				CA4B7E8D1D204AEDC925E2D8 /* Copy Pods Resources */,
+				016E287D1AF668F80081C3C9 /* ShellScript */,
+				E34550AA5FBC9AF2F87DD317 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrintableCheckList;
+			productName = PrintableCheckList;
+			productReference = 33976BBE7DF506D024873E6C /* PrintableCheckList.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		339761830B77EE38314FA95D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "WeHack Studio";
+				TargetAttributes = {
+					33976ED2162EB75367C50322 = {
+						DevelopmentTeam = Y5DR22VZYA;
+					};
+				};
+			};
+			buildConfigurationList = 33976A34EF88056252E2B0FD /* Build configuration list for PBXProject "PrintableCheckList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				"zh-Hans",
+				Base,
+			);
+			mainGroup = 33976078732906A41BD5984F;
+			productRefGroup = 3397611166996E254C1945DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33976ED2162EB75367C50322 /* PrintableCheckList */,
+				33976089F3F2EB8E63A3F1A1 /* PrintableCheckListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		339763A42454A1BA9514FECC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33976ACE708CEE3F869B0FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3397619DEA4BBE71BA87B134 /* Images.xcassets in Resources */,
+				013119261AF5FDD7000F976C /* InfoPlist.strings in Resources */,
+				33976A0A23420684CFC156DE /* LaunchScreen.xib in Resources */,
+				33976E25D533F024EAF0F303 /* Main.storyboard in Resources */,
+				33976E6C521AE56CFC889076 /* button.gif in Resources */,
+				3397691E626C29E8EC1C5356 /* add.png in Resources */,
+				0131192D1AF60345000F976C /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		016E287D1AF668F80081C3C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 27f18ba8fe80b3fbd5f6d81b0688be8e1524ef46 c8b1537d657e5892195a0bd3e9a10f4a49248a8963adcec0dc9bbeb3364a1bd8";
+		};
+		381C5BA60819C22AB7626170 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA4B7E8D1D204AEDC925E2D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34550AA5FBC9AF2F87DD317 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintableCheckList/Pods-PrintableCheckList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		339764A3300043ED84716209 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3397648AAB1FB8FBB50006C8 /* main.m in Sources */,
+				33976619810C1F17026687BF /* AppDelegate.m in Sources */,
+				33976CB242E7B2D36A26BE8E /* Project.m in Sources */,
+				33976F06956A7EE2039F8E22 /* Item.m in Sources */,
+				339761A1DEAD109F63129D30 /* ProjectManager.m in Sources */,
+				3397623B39487E7627D698B7 /* HomeViewController.m in Sources */,
+				33976186836C9B3A3749FBEC /* TextEditViewController.m in Sources */,
+				33976DD2D9842F46973C152D /* ItemsViewController.m in Sources */,
+				33976590A3B7044C5BA4F14B /* PreviewViewController.m in Sources */,
+				33976AEBD00FABC54D4E9F8C /* PrintManager.m in Sources */,
+				33976341EA89B36F1C88D04B /* SettingsViewController.m in Sources */,
+				33976D5123A573B49C158B93 /* SZTextView.m in Sources */,
+				33976A32929D5CBCC526B6B2 /* UIKitHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33976E0DBE5C62525FFE0B5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33976E1633C6D866CBAA0B91 /* PrintableCheckListTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33976B6F8A0F319CB08C7FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33976ED2162EB75367C50322 /* PrintableCheckList */;
+			targetProxy = 339768FE1C995FAC75758857 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		013119281AF5FDD7000F976C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0131192B1AF5FDFE000F976C /* zh-Hans */,
+				0131192C1AF5FE1F000F976C /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0131192F1AF60345000F976C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0131192E1AF60345000F976C /* zh-Hans */,
+				013119301AF6034B000F976C /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		33976CB0F86C6AEF5273AD57 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3397673C144D4B8226420ED0 /* Base */,
+				013119291AF5FDFE000F976C /* zh-Hans */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		33976E03505AE13E8FCE29CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33976D4CC04E9E49B78F431D /* Base */,
+				0131192A1AF5FDFE000F976C /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3397662C54AEF62650C37C96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA82CFEC11445277F9BB6824 /* Pods-PrintableCheckList.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PrintableCheckList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad0f5d75-aa44-41b5-99d7-c5a73ee132f7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		33976786D77A2BC4A5716CB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		339767F8ED3258F7F1E0CE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		33976A91C0E7C91A8E38CF1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrintableCheckList.app/PrintableCheckList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrintableCheckListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		33976C81E10FDDB2A6234BB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAB49A08B7DC9C4FE2815426 /* Pods-PrintableCheckList.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = PrintableCheckList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/PrintableCheckList/SDK/UMeng\"/**",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad0f5d75-aa44-41b5-99d7-c5a73ee132f7";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33976EF192CA34A309A51B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrintableCheckList.app/PrintableCheckList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrintableCheckListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		339767A9E140D0E3088DC8F4 /* Build configuration list for PBXNativeTarget "PrintableCheckList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33976C81E10FDDB2A6234BB8 /* Debug */,
+				3397662C54AEF62650C37C96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33976A34EF88056252E2B0FD /* Build configuration list for PBXProject "PrintableCheckList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				339767F8ED3258F7F1E0CE9A /* Debug */,
+				33976786D77A2BC4A5716CB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33976A92723EAC594E8688E5 /* Build configuration list for PBXNativeTarget "PrintableCheckListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33976EF192CA34A309A51B75 /* Debug */,
+				33976A91C0E7C91A8E38CF1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 339761830B77EE38314FA95D /* Project object */;
+}

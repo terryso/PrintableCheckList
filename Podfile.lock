@@ -6,8 +6,15 @@ DEPENDENCIES:
   - AVOSCloud (~> 3.1.2.6)
   - SSKeychain (~> 1.2.3)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AVOSCloud
+    - SSKeychain
+
 SPEC CHECKSUMS:
   AVOSCloud: 7d2406a4954c15c98363ce841b257b81cdba0bc9
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 9d308bed19ce1d38dc45b300e18bc3967de171a3
+
+COCOAPODS: 1.5.3

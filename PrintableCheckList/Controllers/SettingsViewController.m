@@ -6,16 +6,19 @@
 #import "SettingsViewController.h"
 #import "PCLConstants.h"
 #import "MobClick.h"
+#import "UIKitHelper.h"
+#import "AppDelegate.h"
+#import "ProjectManager.h"
 
 @interface SettingsViewController ()
 
 @property(weak, nonatomic) IBOutlet UITableViewCell *tellFriendsCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *rateCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *supportCell;
-@property(weak, nonatomic) IBOutlet UITableViewCell *versionCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *snapCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *snapProCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *syncCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *opensourceCell;
+@property(nonatomic, strong) UILabel *versionLabel;
 
 @end
 
@@ -30,12 +33,23 @@
     self.rateCell.textLabel.text = NSLocalizedString(@"Rate in AppStore", @"Rate in AppStore");
     self.supportCell.textLabel.text = NSLocalizedString(@"Email to support", @"Email to support");
     self.twitterCell.textLabel.text = NSLocalizedString(@"Follow us on Twitter", @"Follow us on Twitter");
+    self.opensourceCell.textLabel.text = NSLocalizedString(@"Open Source", @"Open Source");
 
-    self.snapCell.detailTextLabel.text = NSLocalizedString(@"Free", @"Free");
-    self.snapProCell.detailTextLabel.text = NSLocalizedString(@"$0.99", @"$0.99");
+    self.syncCell.textLabel.text = NSLocalizedString(@"iCloud Sync", @"iCloud Sync");
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    [self updateSyncCell:enableAutoSync];
+    
+    self.tableView.tableFooterView = self.versionLabel;
+}
 
-    self.versionCell.textLabel.text = NSLocalizedString(@"Current verison", @"Current verison");
-    self.versionCell.detailTextLabel.text = CLIENT_VERSION;
+- (void)updateSyncCell:(BOOL)enableAutoSync {
+    if (enableAutoSync) {
+        self.syncCell.detailTextLabel.text = NSLocalizedString(@"turn on", @"turn on");;
+        self.syncCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        self.syncCell.detailTextLabel.text = NSLocalizedString(@"turn off", @"turn off");;
+        self.syncCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,19 +74,18 @@
             [self sendMail];
         } else if (indexPath.row == 2) {
             [self goTwitter];
+        } else if (indexPath.row == 3) {
+            [self goGithub];
         }
+        
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            [self goSnap];
-        } else if (indexPath.row == 1) {
-            [self goSnapPro];
+            [self doICloudSync];
         }
     }
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-
 
 - (void)tellFriends {
     [MobClick event:@"tellFriends"];
@@ -80,11 +93,19 @@
     NSString *textToShare = [NSString stringWithFormat:NSLocalizedString(@"Check out 'Flash' app! The best printable check list. It's free from %@", @"Check out 'Flash' app! The best printable check list. It's free from %@"), URLString];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare]
                                                   applicationActivities:nil];
-    [self.navigationController presentViewController:activityViewController
-                                            animated:YES
-                                          completion:^{
-
-                                          }];
+    //if iPhone
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self presentViewController:activityViewController animated:YES completion:nil];
+    }
+    //if iPad
+    else {
+        // Change Rect to position Popover
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)
+                               inView:self.view
+             permittedArrowDirections:UIPopoverArrowDirectionAny
+                             animated:YES];
+    }
 }
 
 - (void)sendMail {
@@ -133,19 +154,23 @@
     }
 }
 
-- (void)goSnap {
+- (void)doICloudSync {
     [MobClick event:@"goSnap"];
-    [self openURL:@"https://itunes.apple.com/cn/app/dou-tu-kan-tu-shen-qi-for/id849104717?mt=8"];
-}
-
-- (void)goSnapPro {
-    [MobClick event:@"goSnapPro"];
-    [self openURL:@"https://itunes.apple.com/cn/app/dou-tupro-kan-tu-shen-qi-for/id967317148?mt=8"];
+    //[self openURL:@"https://itunes.apple.com/app/apple-store/id849104717?pt=74623800&ct=flash&mt=8"];
+    
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    [[NSUserDefaults standardUserDefaults] setBool:!enableAutoSync forKey:keyEnableAutoSync];
+    [self updateSyncCell:!enableAutoSync];
 }
 
 - (void)goTwitter {
     [MobClick event:@"goTwitter"];
     [self openURL:@"https://twitter.com/suchuanyi"];
+}
+
+- (void)goGithub {
+    [MobClick event:@"goGithub"];
+    [self openURL:@"https://github.com/terryso/PrintableCheckList"];
 }
 
 - (void)goRating {
@@ -155,6 +180,22 @@
 
 - (void)openURL:(NSString *)url {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+- (UILabel *)versionLabel {
+    if (!_versionLabel) {
+        _versionLabel = [[UILabel alloc] init];
+        _versionLabel.font = [UIFont systemFontOfSize:13.0f];
+        _versionLabel.textColor = [UIColor colorWithRed:195/255.0f green:195/255.0f blue:195/255.0f alpha:1];
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+        NSString *versionText = [NSString stringWithFormat:@"%@-%@(%@)", version, build, [AppDelegate shareDelegate].channelID];
+        _versionLabel.text = versionText;
+        
+        CGSize versionSize = PCL_TEXTSIZE(_versionLabel.text, _versionLabel.font);
+        _versionLabel.frame = CGRectMake((self.view.frame.size.width - versionSize.width) / 2, 0, versionSize.width, versionSize.height);
+    }
+    return _versionLabel;
 }
 
 @end

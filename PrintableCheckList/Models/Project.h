@@ -7,7 +7,6 @@
 
 @class Item;
 
-
 @interface Project : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *projectId;

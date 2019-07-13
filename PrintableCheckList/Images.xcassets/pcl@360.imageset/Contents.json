@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "pcl@360.png"
+      "filename" : "pcl@360.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "pcl@167.png",
       "scale" : "2x"
     },
     {

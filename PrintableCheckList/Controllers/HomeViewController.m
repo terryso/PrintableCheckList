@@ -12,7 +12,7 @@
 #import "Project.h"
 #import "ItemsViewController.h"
 #import "MobClick.h"
-
+#import "PCLConstants.h"
 
 @interface HomeViewController ()
 
@@ -29,10 +29,32 @@
     [super awakeFromNib];
 }
 
+- (void)dealloc {
+    NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:store];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(valueChanged:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:store];
+    
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    if (!enableAutoSync) {
+        return;
+    }
+    
+    NSData *projectsData = [store objectForKey:keyProjects];
+    if (projectsData != nil) {
+        [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
+//    [self loadDataSource:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,7 +78,7 @@
 
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Project *project = self.projects[indexPath.row];
-        [[segue destinationViewController] setProject:project];
+        [(ItemsViewController *) [segue destinationViewController] setProject:project];
     } else if ([[segue identifier] isEqualToString:@"settingsView"]) {
         [MobClick event:@"settings"];
     }
@@ -185,6 +207,29 @@
     if (self.projects.count > 0 && moveToBottom) {
         NSIndexPath *bottom = [NSIndexPath indexPathForRow:self.projects.count - 1 inSection:0];
         [self.tableView scrollToRowAtIndexPath:bottom atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+}
+
+- (void)valueChanged:(NSNotification *)notification {
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    if (!enableAutoSync) {
+        return;
+    }
+    
+    NSDictionary * userInfo = [notification userInfo];
+    NSInteger changeReason = [[userInfo objectForKey:NSUbiquitousKeyValueStoreChangeReasonKey] integerValue];
+    if (changeReason == NSUbiquitousKeyValueStoreServerChange || changeReason == NSUbiquitousKeyValueStoreInitialSyncChange) {
+        NSArray *changeKeys = notification.userInfo[@"NSUbiquitousKeyValueStoreChangedKeysKey"];
+        NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+        
+        for (NSString *key in changeKeys) {
+            if ([key isEqualToString:keyProjects]) {
+                NSData *projectsData = [store objectForKey:keyProjects];
+                [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                [self loadDataSource:NO];
+            }
+        }
     }
 }
 

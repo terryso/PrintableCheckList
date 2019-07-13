@@ -34,19 +34,19 @@ static NSString *password = @"com.wehack.pwd";
     [self initAVOSCloud];
 
     // 初始化友盟SDK
-    [self initUMengSDK];
+//    [self initUMengSDK];
 
     // 注册Crashlytics
-    [Crashlytics startWithAPIKey:@"27f18ba8fe80b3fbd5f6d81b0688be8e1524ef46"];
+//    [Crashlytics startWithAPIKey:@"27f18ba8fe80b3fbd5f6d81b0688be8e1524ef46"];
 
     // 添加默认数据, 只加一次
-    [self addDefaultProject];
+    [self addDefaultData];
 
     return YES;
 }
 
 - (void)configAppearance {
-    [[UINavigationBar appearance] setTranslucent:NO];
+    //[[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],
@@ -78,6 +78,10 @@ static NSString *password = @"com.wehack.pwd";
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
++ (AppDelegate *)shareDelegate {
+    return (AppDelegate *) [UIApplication sharedApplication].delegate;
+}
+
 - (void)initAVOSCloud {
     [AVOSCloud setApplicationId:@"95gv8i8q706avdocuprgqsriuz2yusowsfwhqz2zwn25cq6c"
                       clientKey:@"e5xffakufclbm49rbp0d7tpd15sqg2tawmjwq13q396i7839"];
@@ -90,7 +94,7 @@ static NSString *password = @"com.wehack.pwd";
                                     block:^(AVUser *user, NSError *error) {
                                         if (user != nil) {
                                             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-                                            [ProjectManager syncUserProjects];
+                                            [ProjectManager syncToLeanCloud];
                                         } else {
                                             PCL_LOG(@"用户登陆失败: %@", error);
                                             [self signUp];
@@ -114,7 +118,7 @@ static NSString *password = @"com.wehack.pwd";
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-            [ProjectManager syncUserProjects];
+            [ProjectManager syncToLeanCloud];
         } else {
             PCL_LOG(@"注册用户失败: %@", error);
         }
@@ -137,11 +141,11 @@ static NSString *password = @"com.wehack.pwd";
 
 - (NSString *)channelID {
     //return @"develop";
-    return @"fir";
-    //return @"appstore";
+    //return @"fir";
+    return @"appstore";
 }
 
-- (void)addDefaultProject {
+- (void)addDefaultData {
     BOOL finishAddDefaultProject = [[NSUserDefaults standardUserDefaults] boolForKey:keyFinishAddDefaultProject];
     if (!finishAddDefaultProject) {
         NSString *base64 = NSLocalizedString(@"defaultProject", @"defaultProject");
@@ -150,6 +154,8 @@ static NSString *password = @"com.wehack.pwd";
         Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         [ProjectManager addProject:project];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:keyFinishAddDefaultProject];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:keyEnableAutoSync];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

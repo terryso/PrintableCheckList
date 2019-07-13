@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '7.0'
+# platform :ios, '8.0'
 
 target 'PrintableCheckList' do
 
@@ -15,8 +15,9 @@ target 'PrintableCheckList' do
 #pod 'KDCycleBannerView', '~> 1.1.1'
 #pod 'UMengAnalytics-NO-IDFA', '~> 3.4.7'
 #pod 'SZTextView', '~> 1.2.1'
-pod 'AVOSCloud', '~> 3.1.0'
+pod 'AVOSCloud', '~> 3.1.2.6'
 pod 'SSKeychain', '~> 1.2.3'
+#pod 'iCloudDocumentSync'
 #pod 'BlocksKit', '~> 2.2.5'
 #pod 'Overline-BlocksKit', '~> 0.4.0'
 #pod 'TSToolKit', :git => 'gitosis@sutui.me:tstoolkit.git'

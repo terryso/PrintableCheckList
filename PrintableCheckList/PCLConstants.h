@@ -9,6 +9,22 @@
 #ifndef PrintableCheckList_PCLConstants____FILEEXTENSION___
 #define PrintableCheckList_PCLConstants____FILEEXTENSION___
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define PCL_TEXTSIZE(text, font) [text length] > 0 ? [text \
+sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+#else
+#define PCL_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
+#endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define PCL_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) \
+attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+#else
+#define PCL_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
+sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode] : CGSizeZero;
+#endif
+
 #define CLIENT_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 #ifdef DEBUG
@@ -16,5 +32,7 @@
 #else
 #define PCL_LOG(__FORMAT__, ...)
 #endif
+
+#define keyEnableAutoSync @"keyEnableAutoSync"
 
 #endif

@@ -17,7 +17,7 @@
 
 @end
 
-@interface TextEditViewController : UIViewController
+@interface TextEditViewController : UIViewController <UITextViewDelegate>
 
 @property (nonatomic, weak) id<TextEditViewControllerDelegate> delegate;
 @property (nonatomic, copy) NSString *originText;

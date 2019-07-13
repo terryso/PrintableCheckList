@@ -7,5 +7,5 @@
 @import UIKit;
 @import MessageUI;
 
-@interface SettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate>
+@interface SettingsViewController : UITableViewController <MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 @end

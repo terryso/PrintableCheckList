@@ -1,5 +1,5 @@
 # PrintableCheckList
-A small but powerful App, only focus on one thing, make you easy to print out your checklist. It is open source and [available on the App Store](https://itunes.apple.com/us/app/flash-best-printable-check/id991595690?mt=8).
+A small but powerful App, only focus on one thing, make you easy to print out your checklist. It is open source and [available on the App Store](https://itunes.apple.com/cn/app/flash-best-printable-check/id991595690?mt=8).
 
 ## ScreenShot
 

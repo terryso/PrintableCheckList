@@ -8,16 +8,16 @@
 #import "MobClick.h"
 #import "UIKitHelper.h"
 #import "AppDelegate.h"
+#import "ProjectManager.h"
 
 @interface SettingsViewController ()
 
 @property(weak, nonatomic) IBOutlet UITableViewCell *tellFriendsCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *rateCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *supportCell;
-//@property(weak, nonatomic) IBOutlet UITableViewCell *versionCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *twitterCell;
-@property(weak, nonatomic) IBOutlet UITableViewCell *snapCell;
-@property(weak, nonatomic) IBOutlet UITableViewCell *snapProCell;
+@property(weak, nonatomic) IBOutlet UITableViewCell *syncCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *opensourceCell;
 @property(nonatomic, strong) UILabel *versionLabel;
 
 @end
@@ -33,14 +33,23 @@
     self.rateCell.textLabel.text = NSLocalizedString(@"Rate in AppStore", @"Rate in AppStore");
     self.supportCell.textLabel.text = NSLocalizedString(@"Email to support", @"Email to support");
     self.twitterCell.textLabel.text = NSLocalizedString(@"Follow us on Twitter", @"Follow us on Twitter");
+    self.opensourceCell.textLabel.text = NSLocalizedString(@"Open Source", @"Open Source");
 
-    self.snapCell.detailTextLabel.text = NSLocalizedString(@"Free", @"Free");
-    self.snapProCell.detailTextLabel.text = NSLocalizedString(@"$0.99", @"$0.99");
-
-    //self.versionCell.textLabel.text = NSLocalizedString(@"Current verison", @"Current verison");
-    //self.versionCell.detailTextLabel.text = CLIENT_VERSION;
+    self.syncCell.textLabel.text = NSLocalizedString(@"iCloud Sync", @"iCloud Sync");
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    [self updateSyncCell:enableAutoSync];
     
     self.tableView.tableFooterView = self.versionLabel;
+}
+
+- (void)updateSyncCell:(BOOL)enableAutoSync {
+    if (enableAutoSync) {
+        self.syncCell.detailTextLabel.text = NSLocalizedString(@"turn on", @"turn on");;
+        self.syncCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        self.syncCell.detailTextLabel.text = NSLocalizedString(@"turn off", @"turn off");;
+        self.syncCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -65,12 +74,13 @@
             [self sendMail];
         } else if (indexPath.row == 2) {
             [self goTwitter];
+        } else if (indexPath.row == 3) {
+            [self goGithub];
         }
+        
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            [self goSnap];
-        } else if (indexPath.row == 1) {
-            [self goSnapPro];
+            [self doICloudSync];
         }
     }
 
@@ -144,19 +154,23 @@
     }
 }
 
-- (void)goSnap {
+- (void)doICloudSync {
     [MobClick event:@"goSnap"];
-    [self openURL:@"https://itunes.apple.com/app/apple-store/id849104717?pt=74623800&ct=flash&mt=8"];
-}
-
-- (void)goSnapPro {
-    [MobClick event:@"goSnapPro"];
-    [self openURL:@"https://itunes.apple.com/app/apple-store/id967317148?pt=74623800&ct=flash&mt=8"];
+    //[self openURL:@"https://itunes.apple.com/app/apple-store/id849104717?pt=74623800&ct=flash&mt=8"];
+    
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    [[NSUserDefaults standardUserDefaults] setBool:!enableAutoSync forKey:keyEnableAutoSync];
+    [self updateSyncCell:!enableAutoSync];
 }
 
 - (void)goTwitter {
     [MobClick event:@"goTwitter"];
     [self openURL:@"https://twitter.com/suchuanyi"];
+}
+
+- (void)goGithub {
+    [MobClick event:@"goGithub"];
+    [self openURL:@"https://github.com/terryso/PrintableCheckList"];
 }
 
 - (void)goRating {

@@ -5,6 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define keyProjects @"keyProjects"
+#define keyLastSyncProjects @"keyLastSyncProjects"
+
 @class Project;
 
 
@@ -15,7 +18,7 @@
 + (void)saveProject:(Project *)project;
 + (void)deleteProject:(Project *)project;
 + (void)saveAllProjects:(NSArray *)projects;
-
 + (void)backupUserProjects;
++ (void)syncToLeanCloud;
 
 @end

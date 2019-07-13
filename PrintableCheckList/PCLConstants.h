@@ -33,4 +33,6 @@ sizeWithFont:font constrainedToSize:maxSize lineBreakMode:mode] : CGSizeZero;
 #define PCL_LOG(__FORMAT__, ...)
 #endif
 
+#define keyEnableAutoSync @"keyEnableAutoSync"
+
 #endif

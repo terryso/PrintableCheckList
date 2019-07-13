@@ -8,9 +8,6 @@
 #import "PCLConstants.h"
 #import <AVOSCloud/AVOSCloud.h>
 
-#define keyProjects @"keyProjects"
-#define keyLastSyncProjects @"keyLastSyncProjects"
-
 @implementation ProjectManager
 
 + (NSMutableArray *)allProjects {
@@ -26,10 +23,7 @@
     NSMutableArray *projects = [self allProjects];
     if (![projects containsObject:project]) {
         [projects addObject:project];
-
-        NSData *projectsData = [NSKeyedArchiver archivedDataWithRootObject:projects];
-        [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self saveAllProjects:projects];
     }
 }
 
@@ -38,29 +32,37 @@
     NSInteger index = [projects indexOfObject:project];
     if (index != NSNotFound) {
         projects[index] = project;
-
-        NSData *projectsData = [NSKeyedArchiver archivedDataWithRootObject:projects];
-        [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self saveAllProjects:projects];
     }
 }
 
 + (void)deleteProject:(Project *)project {
     NSMutableArray *projects = [self allProjects];
     [projects removeObject:project];
-
-    NSData *projectsData = [NSKeyedArchiver archivedDataWithRootObject:projects];
-    [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self saveAllProjects:projects];
 }
 
 + (void)saveAllProjects:(NSArray *)projects {
     NSData *projectsData = [NSKeyedArchiver archivedDataWithRootObject:projects];
     [[NSUserDefaults standardUserDefaults] setObject:projectsData forKey:keyProjects];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    BOOL enableAutoSync = [[NSUserDefaults standardUserDefaults] boolForKey:keyEnableAutoSync];
+    if (!enableAutoSync) {
+        return;
+    }
+    
+    NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+    [store setObject:projectsData forKey:keyProjects];
+    [store synchronize];
 }
 
 + (void)backupUserProjects {
+    [self saveAllProjects:[self allProjects]];
+    [self syncToLeanCloud];
+}
+
++ (void)syncToLeanCloud {
     NSTimeInterval lastSyncTime = [[NSUserDefaults standardUserDefaults] doubleForKey:keyLastSyncProjects];
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     PCL_LOG(@"now: %@, lastSyncTime: %@, result: %@", @(now), @(lastSyncTime), @(now - lastSyncTime));
@@ -69,13 +71,13 @@
         for (Project *project in [self allProjects]) {
             [projects addObject:[project toDictionary]];
         }
-
+        
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:projects options:NSJSONWritingPrettyPrinted error:nil];
         NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
+        
         AVUser * currentUser = [AVUser currentUser];
         [currentUser setObject:json forKey:@"checklist"];
-
+        
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             PCL_LOG(@"同步清单完成: %@", @(succeeded));
             if (succeeded) {

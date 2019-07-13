@@ -34,13 +34,13 @@ static NSString *password = @"com.wehack.pwd";
     [self initAVOSCloud];
 
     // 初始化友盟SDK
-    [self initUMengSDK];
+//    [self initUMengSDK];
 
     // 注册Crashlytics
-    [Crashlytics startWithAPIKey:@"27f18ba8fe80b3fbd5f6d81b0688be8e1524ef46"];
+//    [Crashlytics startWithAPIKey:@"27f18ba8fe80b3fbd5f6d81b0688be8e1524ef46"];
 
     // 添加默认数据, 只加一次
-    [self addDefaultProject];
+    [self addDefaultData];
 
     return YES;
 }
@@ -94,7 +94,7 @@ static NSString *password = @"com.wehack.pwd";
                                     block:^(AVUser *user, NSError *error) {
                                         if (user != nil) {
                                             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-                                            [ProjectManager backupUserProjects];
+                                            [ProjectManager syncToLeanCloud];
                                         } else {
                                             PCL_LOG(@"用户登陆失败: %@", error);
                                             [self signUp];
@@ -118,7 +118,7 @@ static NSString *password = @"com.wehack.pwd";
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             PCL_LOG(@"用户登陆成功: %@", [AVUser currentUser]);
-            [ProjectManager backupUserProjects];
+            [ProjectManager syncToLeanCloud];
         } else {
             PCL_LOG(@"注册用户失败: %@", error);
         }
@@ -145,7 +145,7 @@ static NSString *password = @"com.wehack.pwd";
     return @"appstore";
 }
 
-- (void)addDefaultProject {
+- (void)addDefaultData {
     BOOL finishAddDefaultProject = [[NSUserDefaults standardUserDefaults] boolForKey:keyFinishAddDefaultProject];
     if (!finishAddDefaultProject) {
         NSString *base64 = NSLocalizedString(@"defaultProject", @"defaultProject");
@@ -154,6 +154,8 @@ static NSString *password = @"com.wehack.pwd";
         Project *project = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         [ProjectManager addProject:project];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:keyFinishAddDefaultProject];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:keyEnableAutoSync];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

@@ -17,6 +17,7 @@ target 'PrintableCheckList' do
 #pod 'SZTextView', '~> 1.2.1'
 pod 'AVOSCloud', '~> 3.1.2.6'
 pod 'SSKeychain', '~> 1.2.3'
+#pod 'iCloudDocumentSync'
 #pod 'BlocksKit', '~> 2.2.5'
 #pod 'Overline-BlocksKit', '~> 0.4.0'
 #pod 'TSToolKit', :git => 'gitosis@sutui.me:tstoolkit.git'
